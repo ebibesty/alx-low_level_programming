@@ -1,2 +1,1 @@
-# alx-low_level_programming
-C programming 
+This project is the first C project as part of the Alx software engineering curriculum, and covers the very basics of compilation and C.
