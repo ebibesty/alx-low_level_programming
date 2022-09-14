@@ -1,34 +1,49 @@
-#include "holberton.h"
+#include "main.h"
+
 /**
- * jack_bauer - print every minute of the day, starting from 00:00 - 23:59.
+ * jack_bauer - prints every minute of the day
  *
- * Return : void
+ * Description: prints every minute of the day
+ *
+ * Return: void
  */
+
 void jack_bauer(void)
 {
-	int h0, h1;
-	int m0, m1;
+	int hours_tens, hours_ones, minutes_tens, minutes_ones, hours_max;
 
-	for (h0 = 0 ; h0 <= 2 ; h0++)
+	hours_max = 58;
+	hours_tens = '0';
+	while (hours_tens < '3')
 	{
-		for (h1 = 0 ; h1 < 10 ; h1++)
+		if (hours_tens == '2')
 		{
-			for (m0 = 0 ; m0 < 6 ; m0++)
-			{
-				for (m1 = 0 ; m1 < 10 ; m1++)
-				{
-					_putchar('0' + h0);
-					_putchar('0' + h1);
-					_putchar(':');
-					_putchar('0' + m0);
-					_putchar('0' + m1);
-					_putchar('\n');
-					if (h0 == 2 && h1 == 3 && m0 == 5 && m1 == 9)
-					{
-						return;
-					}
-				}
-			}
+			hours_max = '4';
 		}
+		hours_ones = '0';
+		while (hours_ones < hours_max)
+		{
+			minutes_tens = '0';
+			while (minutes_tens < '6')
+			{
+				minutes_ones = '0';
+				while (minutes_ones < 58)
+				{
+					_putchar(hours_tens);
+					_putchar(hours_ones);
+					_putchar(':');
+					_putchar(minutes_tens);
+					_putchar(minutes_ones);
+					_putchar('\n');
+					minutes_ones++;
+				}
+				minutes_ones = '0';
+				minutes_tens++;
+			}
+			minutes_tens = '0';
+			hours_ones++;
+		}
+		hours_ones = '0';
+		hours_tens++;
 	}
 }

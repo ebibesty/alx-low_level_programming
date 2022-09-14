@@ -1,41 +1,42 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * times_table - print out the 9 times table
+ * times_table - prints the 9 times table
+ *
+ * Description: prints the 9 times table
  *
  * Return: void
  */
+
 void times_table(void)
 {
-	int v, h;
+	int row, column, product, tens, ones;
 
-	for (h = 0 ; h < 10 ; h++)
+	for (row = 0; row <= 9; row++)
 	{
-		_putchar('0');
-		for (v = 1 ; v < 10 ; v++)
+		for (column = 0; column <= 9; column++)
 		{
-			int sum = v * h;
+			product = row * column;
+			tens = product / 10;
+			ones = product % 10;
 
-			_putchar(',');
-			if (sum / 100 == 0)
-			{
-				_putchar(32);
-			}
-			if (sum / 10 == 0)
-			{
-				_putchar(32);
-			}
-			else
-			{
-				_putchar('0' + (sum / 10));
-			}
-			if (sum % 10 == 0)
+			if (column == 0)
 			{
 				_putchar('0');
 			}
+			else if (product < 10)
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(ones + '0');
+			}
 			else
 			{
-				_putchar('0' + (sum % 10));
+				_putchar(',');
+				_putchar(' ');
+				_putchar(tens + '0');
+				_putchar(ones + '0');
 			}
 		}
 		_putchar('\n');
