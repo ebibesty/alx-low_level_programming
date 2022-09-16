@@ -1,5 +1,4 @@
-#include "holberton.h"
-
+#include <stdio.h>
 /**
  * _isupper - Check if the given character is an uppercase letter.
  * @c: Character to be tested
